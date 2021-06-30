@@ -1,41 +1,47 @@
 const defaultResult = 0;
 let currentResult = defaultResult;
 
+// gets input from input field
 function getUserNumberInput() {
   // parseInt() function convert string into a number
   return parseInt(userInput.value);
 }
 
+// generates and writes calculation log
 function createAndWriteOutput(operator, resultBeforeCalc, calcNumber) {
-  const calcDescription = `${resultBeforeCalc}  ${operator} ${calcNumber}`;
-  outputResult(currentResult, calcDescription);
+  const calcDescription = `${resultBeforeCalc} ${operator} ${calcNumber}`;
+  outputResult(currentResult, calcDescription); // from vendor file
 }
 
 function add() {
   const enteredNumber = getUserNumberInput();
   const initialResult = currentResult;
-  currentResult = currentResult + enteredNumber;
+  // currentResult = currentResult + enteredNumber;
+  currentResult += enteredNumber;
   createAndWriteOutput('+', initialResult, enteredNumber);
 }
 
 function subtract() {
   const enteredNumber = getUserNumberInput();
   const initialResult = currentResult;
-  currentResult = currentResult - enteredNumber;
+  // currentResult = currentResult - enteredNumber;
+  currentResult -= enteredNumber;
   createAndWriteOutput('-', initialResult, enteredNumber);
 }
 
 function multiply() {
   const enteredNumber = getUserNumberInput();
   const initialResult = currentResult;
-  currentResult = currentResult * enteredNumber;
+  // currentResult = currentResult * enteredNumber;
+  currentResult *= enteredNumber;
   createAndWriteOutput('*', initialResult, enteredNumber);
 }
 
 function divide() {
   const enteredNumber = getUserNumberInput();
   const initialResult = currentResult;
-  currentResult = currentResult / enteredNumber;
+  // currentResult = currentResult / enteredNumber;
+  currentResult /= enteredNumber;
   createAndWriteOutput('/', initialResult, enteredNumber);
 }
 
